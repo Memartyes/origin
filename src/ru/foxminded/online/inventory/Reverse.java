@@ -2,28 +2,21 @@ package ru.foxminded.online.inventory;
 
 public class Reverse {
 
-//    public void test(String source) {
-//        for (String s : source.split(" ")) {
-//            System.out.print(new StringBuilder(s).reverse().toString());
-//            System.out.print(" ");
-//        }
-//    }
-
-    private String reverseStringByCharacters(String characters) {
-        char[] stringBuild = characters.toCharArray();
-        int firstChar = 0;
-        int lastChar = stringBuild.length - 1;
-        while (firstChar < lastChar) {
-            if(!Character.isAlphabetic(stringBuild[firstChar])) {
-                firstChar++;
-            } else if(!Character.isAlphabetic(stringBuild[lastChar])) {
-                lastChar--;
+    private String reverseStringByCharacters(String string) {
+        char[] stringBuild = string.toCharArray();
+        int firstIndex = 0;
+        int lastIndex = stringBuild.length - 1;
+        while (firstIndex < lastIndex) {
+            if(!Character.isAlphabetic(stringBuild[firstIndex])) {
+                firstIndex++;
+            } else if(!Character.isAlphabetic(stringBuild[lastIndex])) {
+                lastIndex--;
             } else {
-                char temp = stringBuild[firstChar];
-                stringBuild[firstChar] = stringBuild[lastChar];
-                stringBuild[lastChar] = temp;
-                firstChar++;
-                lastChar--;
+                char temp = stringBuild[firstIndex];
+                stringBuild[firstIndex] = stringBuild[lastIndex];
+                stringBuild[lastIndex] = temp;
+                firstIndex++;
+                lastIndex--;
             }
         }
         return new String(stringBuild);
